@@ -4,6 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <title>lesson01</title>
+    <style>
+        table {
+            width: 900px;
+            border-collapse: collapse;
+        }
+
+        th {
+            width: 300px;
+            border: 1px solid black;
+        }
+
+        td {
+            width: 300px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -42,67 +60,228 @@ $f = "Цифр20";
 $g = "Ц20ифр";
 $d = false; ?>
 
-<p>ЦЕЛОЧИСЛЕННЫЙ ТИП:&nbsp;<?php echo $a; ?></p>
-<p>С ПЛАВАЮЩЕЙ ЗАПЯТОЙ:&nbsp;<?php echo $b; ?></p>
-<p>СТРОКОВЫЙ ТИП:&nbsp;<?php echo $c; ?></p>
-<p>ЛОГИЧЕСКИЙ ТИП:&nbsp;<?php echo $d; ?></p>
-<br>
+<table>
+    <th>Тип данных</th>
+    <th>ECHO</th>
+    <th>var_damp</th>
+    <tr>
+        <td colspan="3">Пункт 1 (Переменные и константы без кавычек)</td>
+    </tr>
+    <tr>
+        <td>ЦЕЛОЧИСЛЕННЫЙ</td>
+        <td><?php echo $a; ?></td>
+        <td><?php var_dump($a); ?></td>
+    </tr>
+    <tr>
+        <td>С ПЛАВАЮЩЕЙ ЗАПЯТОЙ</td>
+        <td><?php echo $b; ?></td>
+        <td><?php var_dump($b); ?></td>
+    </tr>
+    <tr>
+        <td>СТРОКОВЫЙ ТИП</td>
+        <td><?php echo $c; ?></td>
+        <td><?php var_dump($c); ?></td>
+    </tr>
+    <tr>
+        <td>ЛОГИЧЕСКИЙ ТИП</td>
+        <td><?php echo $d; ?></td>
+        <td><?php var_dump($d); ?></td>
+    </tr>
 
-<p>ЦЕЛОЧИСЛЕННАЯ КОНСТАНТА - CONSTA:<?php echo CONSTA; ?></p>
-<p>КОНСТАНТА С ПЛАВАЮЩЕЙ ЗАПЯТОЙ - CONSTB:<?php echo CONSTB; ?></p>
-<p>КОНСТАНТА СТРОКА - CONSTC:<?php echo CONSTC; ?></p>
-<p>КОНСТАНТА ЛОГИЧЕСКОГО ТИПА - CONSTD:<?php echo CONSTD; ?></p>
+    <tr>
+        <td>ЦЕЛОЧИСЛЕННАЯ КОНСТАНТА - CONSTA</td>
+        <td><?php echo CONSTA; ?></td>
+        <td><?php var_dump(CONSTA); ?></td>
+    </tr>
 
-<h4>Пункт 2</h4>
-<p>ЦЕЛОЧИСЛЕННЫЙ ТИП:&nbsp;<?php echo "$a"; ?></p>
-<p>С ПЛАВАЮЩЕЙ ЗАПЯТОЙ:&nbsp;<?php echo "$b"; ?></p>
-<p>СТРОКОВЫЙ ТИП:&nbsp;<?php echo "$c"; ?></p>
-<p>ЛОГИЧЕСКИЙ ТИП:&nbsp;<?php echo "$d"; ?></p>
-<br>
+    <tr>
+        <td>С ПЛАВАЮЩЕЙ ЗАПЯТОЙ - CONSTB</td>
+        <td><?php echo CONSTB; ?></td>
+        <td><?php var_dump(CONSTB); ?></td>
+    </tr>
 
-<p>ЦЕЛОЧИСЛЕННАЯ КОНСТАНТА - CONSTA:<?php echo "CONSTA"; ?></p>
-<p>КОНСТАНТА С ПЛАВАЮЩЕЙ ЗАПЯТОЙ - CONSTB:<?php echo "CONSTB"; ?></p>
-<p>КОНСТАНТА СТРОКА - CONSTC:<?php echo "CONSTC"; ?></p>
-<p>КОНСТАНТА ЛОГИЧЕСКОГО ТИПА - CONSTD:<?php echo "CONSTD"; ?></p>
+    <tr>
+        <td>СТРОКА - CONSTC</td>
+        <td><?php echo CONSTC; ?></td>
+        <td><?php var_dump(CONSTC); ?></td>
+    </tr>
+    <tr>
+        <td>ЛОГИЧЕСКОГО ТИПА - CONSTD</td>
+        <td><?php echo CONSTD; ?></td>
+        <td><?php var_dump(CONSTD); ?></td>
+    </tr>
+    <tr>
+        <td colspan="3">Пункт 2 (Переменныe и константы в кавычках "")</td>
+    </tr>
+    <tr>
+        <td>ЦЕЛОЧИСЛЕННЫЙ ТИП</td>
+        <td><?php echo "$a"; ?></td>
+        <td><?php var_dump("$a"); ?></td>
+    </tr>
+    <tr>
+        <td>С ПЛАВАЮЩЕЙ ЗАПЯТОЙ</td>
+        <td><?php echo "$b"; ?></td>
+        <td><?php var_dump("$b"); ?></td>
+    </tr>
+    <tr>
+        <td>СТРОКОВЫЙ ТИП</td>
+        <td><?php echo "$c"; ?></td>
+        <td><?php var_dump("$c"); ?></td>
+    </tr>
+    <tr>
+        <td>ЛОГИЧЕСКИЙ ТИП</td>
+        <td><?php echo "$d"; ?></td>
+        <td><?php var_dump("$d"); ?></td>
+    </tr>
+    <tr>
+        <td>ЦЕЛОЧИСЛЕННАЯ КОНСТАНТА - CONSTA</td>
+        <td><?php echo "CONSTA"; ?></td>
+        <td><?php var_dump("CONSTA"); ?></td>
+    </tr>
+    <tr>
+        <td>С ПЛАВАЮЩЕЙ ЗАПЯТОЙ - CONSTB</td>
+        <td><?php echo "CONSTB"; ?></td>
+        <td><?php var_dump("CONSTB"); ?></td>
+    </tr>
+    <tr>
+        <td>СТРОКА - CONSTC</td>
+        <td><?php echo "CONSTC"; ?></td>
+        <td><?php var_dump("CONSTC"); ?></td>
+    </tr>
+    <tr>
+        <td>ЛОГИЧЕСКОГО ТИПА - CONSTD</td>
+        <td><?php echo "CONSTD"; ?></td>
+        <td><?php var_dump("CONSTD"); ?></td>
+    </tr>
+    <tr>
+        <td colspan="3">Пункт 3 (Переменные и константы в кавычках '')</td>
+    </tr>
+    <tr>
+        <td>ЦЕЛОЧИСЛЕННЫЙ</td>
+        <td><?php echo '$a'; ?></td>
+        <td><?php var_dump('$a'); ?></td>
+    </tr>
+    <tr>
+        <td>С ПЛАВАЮЩЕЙ ЗАПЯТОЙ</td>
+        <td><?php echo '$b'; ?></td>
+        <td><?php var_dump('$b'); ?></td>
+    </tr>
+    <tr>
+        <td>СТРОКОВЫЙ ТИП</td>
+        <td><?php echo '$c'; ?></td>
+        <td><?php var_dump('$c'); ?></td>
+    </tr>
+    <tr>
+        <td>ЛОГИЧЕСКИЙ ТИП</td>
+        <td><?php echo '$d'; ?></td>
+        <td><?php var_dump('$d'); ?></td>
+    </tr>
+    <tr>
+        <td>КОНСТАНТА - CONSTA</td>
+        <td><?php echo 'CONSTA'; ?></td>
+        <td><?php var_dump('CONSTA'); ?></td>
+    </tr>
+    <tr>
+        <td>ПЛАВАЮЩЕЙ ЗАПЯТОЙ - CONSTB</td>
+        <td><?php echo 'CONSTB'; ?></td>
+        <td><?php var_dump('CONSTB'); ?></td>
+    </tr>
+    <tr>
+        <td>СТРОКА - CONSTC</td>
+        <td><?php echo 'CONSTC'; ?></td>
+        <td><?php var_dump('CONSTC'); ?></td>
+    </tr>
+    <tr>
+        <td>ЛОГИЧЕСКОГО ТИПА - CONSTD</td>
+        <td><?php echo 'CONSTD'; ?></td>
+        <td><?php var_dump('CONSTD'); ?></td>
+    </tr>
+    <tr>
+        <td colspan="3">Пункт 4 Сложение - переменные и константы разных типов</td>
+    </tr>
+    <tr>
+        <td>целое и число с плавающей запятой</td>
+        <td><?php echo($a + $b); ?></td>
+        <td><?php var_dump($a + $b); ?></td>
+    </tr>
 
-<h4>Пункт 3</h4>
-<p>ЦЕЛОЧИСЛЕННЫЙ ТИП:&nbsp;<?php echo '$a'; ?></p>
-<p>С ПЛАВАЮЩЕЙ ЗАПЯТОЙ:&nbsp;<?php echo '$b'; ?></p>
-<p>СТРОКОВЫЙ ТИП:&nbsp;<?php echo '$c'; ?></p>
-<p>ЛОГИЧЕСКИЙ ТИП:&nbsp;<?php echo '$d'; ?></p>
-<br>
+    <tr>
+        <td>целое и строку</td>
+        <td><?php echo($a + $c); ?></td>
+        <td><?php var_dump($a + $c); ?></td>
+    </tr>
+    <tr>
+        <td>число с плавающей запятой и строку</td>
+        <td><?php echo($b + $c); ?></td>
+        <td><?php var_dump($b + $c); ?></td>
+    </tr>
+    <tr>
+        <td>строку и строку</td>
+        <td><?php echo($c + $c); ?></td>
+        <td><?php var_dump($c + $c); ?></td>
+    </tr>
+    <tr>
+        <td>число и булево</td>
+        <td><?php echo($a + $d); ?></td>
+        <td><?php var_dump($a + $d); ?></td>
+    </tr>
+    <tr>
+        <td>константу целого и строки</td>
+        <td><?php echo(CONSTA + CONSTC); ?> </td>
+        <td><?php var_dump(CONSTA + CONSTC); ?></td>
+    </tr>
+    <tr>
+        <td>константы строки и строки</td>
+        <td><?php echo(CONSTC + CONSTC); ?> </td>
+        <td><?php var_dump(CONSTAC + CONSTC); ?></td>
+    </tr>
+    <tr>
+        <td>число и строку с цифрами в начале</td>
+        <td><?php echo($a + $e); ?></td>
+        <td><?php var_dump($a + $e); ?></td>
+    </tr>
 
-<p>ЦЕЛОЧИСЛЕННАЯ КОНСТАНТА - CONSTA:<?php echo 'CONSTA'; ?></p>
-<p>КОНСТАНТА С ПЛАВАЮЩЕЙ ЗАПЯТОЙ - CONSTB:<?php echo 'CONSTB'; ?></p>
-<p>КОНСТАНТА СТРОКА - CONSTC:<?php echo 'CONSTC'; ?></p>
-<p>КОНСТАНТА ЛОГИЧЕСКОГО ТИПА - CONSTD:<?php echo 'CONSTD'; ?></p>
+    <tr>
+        <td>число и строку с цифрами в середине</td>
+        <td><?php echo($a + $f); ?></td>
+        <td><?php var_dump($a + $f); ?></td>
+    </tr>
 
-<h4>Пункт 4</h4>
-Склвдываем: <br>
-целое и число с плавающей запятой:   <?php echo $a + $b; ?> <br>
-целое и строку: <?php echo $a + $c; ?> <br>
-число с плавающей запятой и строку: <?php echo $b + $c; ?> <br>
-строку и строку: <?php echo $c + $c; ?> <br>
-число и булево: <?php echo $a + $d; ?> <br>
-константу целого и строки: <?php echo CONSTA + CONSTC; ?> <br>
-константы строки и строки: <?php echo CONSTC + CONSTC; ?> <br>
-число и строку с цифрами в начале: <?php echo $a + $e; ?> <br>
-число и строку с цифрами в середине: <?php echo $a + $f; ?> <br>
-число и строку с цифрами в конце: <?php echo $a + $g; ?> <br>
-строка с цифрой в начале и такая же строка: <?php echo $f + $f; ?> <br>
+    <tr>
+        <td>число и строку с цифрами в конце</td>
+        <td><?php echo ($a + $g); ?></td>
+        <td><?php var_dump($a + $g); ?></td>
+    </tr>
+    <tr>
+        <td>строка с цифрой в начале и такая же строка</td>
+        <td><?php echo ($f + $f); ?></td>
+        <td><?php var_dump($f + $f); ?></td>
+    </tr>
+    <tr>
+        <td colspan="3">Пункт 5 (Хорь)</td>
+    </tr>
+    <tr>
+        <td>$a xor $a</td>
+        <td><?php echo ($a xor $a); ?></td>
+        <td><?php var_dump($a xor $a); ?></td>
+    </tr>
+    <tr>
+        <td>$a xor $b</td>
+        <td><?php echo ($a xor $b); ?></td>
+        <td><?php var_dump($a xor $b); ?></td>
+    </tr>
+    <tr>
+        <td>$a xor $c</td>
+        <td><?php echo ($a xor $c); ?></td>
+        <td><?php var_dump($a xor $c); ?></td>
+    </tr>
+    <tr>
+        <td>$c xor $d</td>
+        <td><?php echo ($c xor $d); ?></td>
+        <td><?php var_dump($c xor $d); ?></td>
+    </tr>
 
-<h4>Пункт 5</h4>
-Теперь хорь. <br>
-
-$a xor $a <?php var_dump($a xor $a); ?> <br>
-
-
-
-
-
-
-
-
+</table>
 
 
 
