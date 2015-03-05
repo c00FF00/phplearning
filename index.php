@@ -20,6 +20,9 @@
             text-align: center;
             border: 1px solid black;
         }
+        .colorr {
+            color: blue;
+        }
 
     </style>
 </head>
@@ -44,6 +47,24 @@
     </li>
 </ol>
 
+    
+<h3>Исходные данные</h3>
+    
+<pre>
+define("CONSTA", 5);
+define("CONSTB", 2.0);
+define("CONSTC", "Какая то строка");
+define("CONSTD", 'false');
+$a = 5;
+$b = 2.0;
+$c = "Какая то строка";
+$e = "20цифр";
+$f = "Цифр20";
+$g = "Ц20ифр";
+$d = false;
+</pre>      
+    
+    
 <h3>РЕЗУЛЬТАТЫ</h3>
 
 <h4>Пункт 1</h4>
@@ -60,12 +81,15 @@ $f = "Цифр20";
 $g = "Ц20ифр";
 $d = false; ?>
 
+  
+    
+    
 <table>
     <th>Тип данных</th>
     <th>ECHO</th>
     <th>var_damp</th>
     <tr>
-        <td colspan="3">Пункт 1 (Переменные и константы без кавычек)</td>
+        <td class="colorr" colspan="3">Пункт 1 (Переменные и константы без кавычек)</td>
     </tr>
     <tr>
         <td>ЦЕЛОЧИСЛЕННЫЙ</td>
@@ -111,7 +135,7 @@ $d = false; ?>
         <td><?php var_dump(CONSTD); ?></td>
     </tr>
     <tr>
-        <td colspan="3">Пункт 2 (Переменныe и константы в кавычках "")</td>
+        <td class="colorr" colspan="3">Пункт 2 (Переменныe и константы в кавычках "")</td>
     </tr>
     <tr>
         <td>ЦЕЛОЧИСЛЕННЫЙ ТИП</td>
@@ -154,7 +178,7 @@ $d = false; ?>
         <td><?php var_dump("CONSTD"); ?></td>
     </tr>
     <tr>
-        <td colspan="3">Пункт 3 (Переменные и константы в кавычках '')</td>
+        <td class="colorr" colspan="3">Пункт 3 (Переменные и константы в кавычках '')</td>
     </tr>
     <tr>
         <td>ЦЕЛОЧИСЛЕННЫЙ</td>
@@ -197,7 +221,7 @@ $d = false; ?>
         <td><?php var_dump('CONSTD'); ?></td>
     </tr>
     <tr>
-        <td colspan="3">Пункт 4 Сложение - переменные и константы разных типов</td>
+        <td class="colorr" colspan="3">Пункт 4 Сложение - переменные и константы разных типов</td>
     </tr>
     <tr>
         <td>целое и число с плавающей запятой</td>
@@ -258,7 +282,7 @@ $d = false; ?>
         <td><?php var_dump($f + $f); ?></td>
     </tr>
     <tr>
-        <td colspan="3">Пункт 5 (Хорь)</td>
+        <td class="colorr" colspan="3">Пункт 5 (Хорь)</td>
     </tr>
     <tr>
         <td>$a xor $a</td>
