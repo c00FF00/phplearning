@@ -8,7 +8,7 @@
 
 
 <?php
-function fibo{$z} {
+function fibo($z) {
     if ($z < 2) {
         return 1;
     }
@@ -23,4 +23,6 @@ echo fibo(2);
 
 
 </body>
+
+
 </html>
