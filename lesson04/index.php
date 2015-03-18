@@ -39,20 +39,16 @@ function testdigit($anydata)
 
 }
 
-
 function calculator($firstnm, $secondnm, $act)
 {
-    //Сделаем шаблон для целых, дробных, положительных и отрицательных чисел.
-    //$pattern = "/^-[0-9]+\.[0-9]+$|^[0-9]+\.[0-9]+$|^-[0-9]+$|^[0-9]+$/";
-    //Проверим - число ли... Ну а что, ну а вдруг...
-//    if (!preg_match($pattern, $firstnm)) {
-//        return ('ERROR. Only numbers.');
-//        exit;
-//    }
-//    if (!preg_match($pattern, $secondnm)) {
-//        return ('ERROR. Only numbers.');
-//        exit;
-//    }
+    if (empty($firstnm) or empty($secondnm)) {
+        return '';
+        exit;
+    } elseif (!testdigit($firstnm) or !testdigit($secondnm)) {
+        return 'ERROR. Only digits ....';
+        exit;
+    }
+
     //Выберем действие и сделаем с действием действие...))
     switch ($act) {
         case("+"):
@@ -72,9 +68,6 @@ function calculator($firstnm, $secondnm, $act)
             break;
     }
 }
-
-//Вычислим результат и отдадим суперглобальной переменной.
-//calculator($_POST['firstnumber'],$_POST['secondnumber'],$_POST['action']);
 
 $result = calculator($_POST['firstnumber'], $_POST['secondnumber'], $_POST['action']);
 
