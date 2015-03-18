@@ -46,7 +46,7 @@ if (isset($_COOKIE['id'])) {
                     <td>Имя</td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="password" size="30"></td>
+                    <td><input type="password" name="password" size="30"></td>
                     <td>Пароль</td>
                 </tr>
                 <tr>
