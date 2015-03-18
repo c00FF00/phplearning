@@ -14,7 +14,7 @@ $pswdform = $_POST['password'];
 
 if (!array_key_exists($id, $users)) {
     echo $err[0];
-    header('Location:index.html');
+//    header('Location:index.html');
 }
 
 if ($pswdform == $users[$id]) {
