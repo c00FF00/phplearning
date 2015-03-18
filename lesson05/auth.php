@@ -11,7 +11,7 @@ $users = ['Петр' => '112233', 'Мария' => '334455'];
 
 if (array_key_exists($_POST['id'],$users)) {
     echo 'Существует';
-    
+
     header('Location:authusers.html');
 } else {
     echo 'Нет такого пользователя.';
