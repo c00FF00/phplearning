@@ -5,7 +5,7 @@
     <title>Auth</title>
 </head>
 <?php
-$err = ['Нет такого пользователя.', 'Пароль не верен.'];
+$err = ['Нет такого пользователя.', 'Пароль не верен.', 'Вы не прошли авторизацию'];
 $users = ['Петр' => '112233', 'Мария' => '334455'];
 
 //Проверим есть ли данный пользователь вообще.
@@ -13,16 +13,11 @@ $id = $_POST['id'];
 $pswdform = $_POST['password'];
 
 if (!array_key_exists($id, $users)) {
+    header('Location:indx.php');
     echo $err[0];
-//    header('Location:index.html');
-}
-
-if ($pswdform == $users[$id]) {
-    header('Location:authusers.html');
+} elseif ($pswdform == $users[$id]) {
+    header('Location:authusers.php');
 } else {
-    echo $err[1];
+    echo $err[2];
 }
-
-
-
 ?>

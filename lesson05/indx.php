@@ -1,6 +1,7 @@
 <?php
-if (isset($_COOKIE['id'])) {
-    $id = $_COOKIE['id'];
+if (isset($_COOKIE['authuser'])) {
+    var_dump($_COOKIE['id']);
+    header ('Location:authusers.php');
 } else {
     header ('Location:index.html');
     exit;
