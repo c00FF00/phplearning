@@ -5,7 +5,16 @@
     <title>Страница1</title>
 </head>
 <body>
-<h1>Страница для аутифицированных пользователей</h1>
+
+<?php if (empty($_COOKIE['authuser'])) {
+    header('Location:notenter.html');
+}
+?>
+<h3>Страница для аутифицированных пользователей</h3>
+
+<h4>Привет&nbsp;<?php echo $_COOKIE['authuser'];?></h4>
+
+
 
 </body>
 </html>
