@@ -1,12 +1,4 @@
-<?php
-if (isset($_COOKIE['authuser'])) {
-    var_dump($_COOKIE['id']);
-    header ('Location:authusers.php');
-} else {
-    header ('Location:index.html');
-    exit;
-}
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -59,7 +51,3 @@ if (isset($_COOKIE['authuser'])) {
     </form>
 
 </div>
-
-
-</body>
-</html>
