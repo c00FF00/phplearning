@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php session_start();
+?><!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -14,6 +15,8 @@
 <h3>Страница для аутифицированных пользователей</h3>
 
 <h4>Привет&nbsp;<?php echo $_COOKIE['authuser']; ?></h4>
+
+<?php echo 'Сессия для '; var_dump($_SESSION['login']); ?>
 
 
 </body>
