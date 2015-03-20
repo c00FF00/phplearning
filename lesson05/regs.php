@@ -31,6 +31,13 @@
 </head>
 <body>
 
+<?php echo __DIR__ ;?>
+
+
+<!---->
+<?php //include 'lesson05/funct.php'; ?>
+<?php //echo msg()['notuser']; ?>
+<!---->
 <div id="regform">
     <form action="auth.php" method="post">
         <fieldset>
