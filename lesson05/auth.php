@@ -11,7 +11,7 @@ $msg = ['Нет такого пользователя.', 'Пароль не ве
 $users = ['Петр' => '112233', 'Мария' => '334455', 'Djon' => '111'];
 $expire = time() + 300;
 $cookEnd = time() - 300;
-
+//
 $id = $_POST['id'];
 $pswdform = $_POST['password'];
 $logout = $_POST['logout'];
