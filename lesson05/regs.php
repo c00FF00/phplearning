@@ -22,6 +22,7 @@
         #regform input[type="text"]:hover {
             border: solid 2px blueviolet;
         }
+
         #regform input[type="text"]:focus {
             border: solid 2px blueviolet;
         }
@@ -44,7 +45,7 @@
                     <td>Пароль</td>
                 </tr>
                 <tr>
-                    <td><input type="submit" value="Войти">&nbsp;&nbsp;<input type="reset" value="Сброс"> </td>
+                    <td><input type="submit" value="Войти">&nbsp;&nbsp;<input type="reset" value="Сброс"></td>
                     <td></td>
                 </tr>
             </table>

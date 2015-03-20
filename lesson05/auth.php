@@ -7,7 +7,6 @@
 </head>
 <?php
 
-
 $msg = ['Нет такого пользователя.', 'Пароль не верен.', 'Вы не прошли авторизацию', 'Это сессия > ', 'Нажал на выход.'];
 $users = ['Петр' => '112233', 'Мария' => '334455', 'Djon' => '111'];
 $expire = time() + 300;
@@ -16,10 +15,6 @@ $cookEnd = time() - 300;
 $id = $_POST['id'];
 $pswdform = $_POST['password'];
 $logout = $_POST['logout'];
-
-
-
-
 
 if ($_POST['logout']) {
     echo $msg[4];
@@ -32,7 +27,7 @@ if ($_POST['logout']) {
 if (!array_key_exists($id, $users)) {
     header('Location:index.php');
     echo $msg[0];
-}  elseif ($pswdform == $users[$id]) {
+} elseif ($pswdform == $users[$id]) {
     setcookie('authuser', $id, $expire);
     setcookie('noauthuser', 'baduser', $cookEnd);
     $_SESSION['login'] = $id;
