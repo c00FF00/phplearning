@@ -18,6 +18,13 @@
 
 <?php echo 'Сессия для '; var_dump($_SESSION['login']); ?>
 
+<?php echo 'Noauth cookie '; var_dump($_COOKIE['noauthuser']); ?>
+
+
+<form action="auth.php" method="post">
+    <input type="submit" value="Выход" name="logout">
+</form>
+
 
 </body>
 </html>

@@ -36,11 +36,11 @@
             <legend>Авторизация</legend>
             <table>
                 <tr>
-                    <td><input type="text" name="id" size="30"></td>
+                    <td><input type="text" name="id" size="30" value=""></td>
                     <td>Имя</td>
                 </tr>
                 <tr>
-                    <td><input type="password" name="password" size="30"></td>
+                    <td><input type="password" name="password" size="30" value=""></td>
                     <td>Пароль</td>
                 </tr>
                 <tr>
