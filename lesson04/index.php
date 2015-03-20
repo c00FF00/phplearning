@@ -36,7 +36,6 @@ function testdigit($anydata)
     } else {
         return false;
     }
-
 }
 
 function calculator($firstnm, $secondnm, $act)
@@ -72,9 +71,6 @@ function calculator($firstnm, $secondnm, $act)
 $result = calculator($_POST['firstnumber'], $_POST['secondnumber'], $_POST['action']);
 
 ?>
-
-
-
 
 <!--Собственно, а вот и html.-->
 <!--Для наглядности работы проверки ввода чисел-->
