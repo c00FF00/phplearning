@@ -24,7 +24,7 @@ $logout = $_POST['logout'];
 if ($_POST['logout']) {
     echo $msg[4];
     setcookie('authuser', $id, $cookEnd);
-    setcookie('noauthuser', 'baduser', $cookEnd);
+//    setcookie('noauthuser', 'baduser', $cookEnd);
     session_destroy();
     header('Location:index.php');
 }
@@ -34,6 +34,7 @@ if (!array_key_exists($id, $users)) {
     echo $msg[0];
 }  elseif ($pswdform == $users[$id]) {
     setcookie('authuser', $id, $expire);
+    setcookie('noauthuser', 'baduser', $cookEnd);
     $_SESSION['login'] = $id;
     header('Location:authusers.php');
 } else {
