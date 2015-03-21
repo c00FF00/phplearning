@@ -5,9 +5,10 @@
     <title>Галерея</title>
     <style>
         #main {
-            width: 1280px;
+
             margin: 0px auto;
-            border: solid 1px darkred;
+
+
         }
 
         #main div {
@@ -32,10 +33,12 @@
 
 <div id="main">
 
-    <div><img src="img/001.jpg" alt="Картинка 1" width="200px" height="200px"></div>
-    <div><img src="img/002.jpg" alt="Картинка 2" width="200px" height="200px"></div>
-    <div><img src="img/004.jpg" alt="Картинка 4" width="200px" height="200px"></div>
-    <div><img src="img/005.jpg" alt="Картинка 5" width="200px" height="200px"></div>
+    <?php $ddir = scandir('img');
+
+    foreach($ddir as $picture) { ?>
+        <div><img src=<?php echo 'img/' . $picture; ?> alt="Картинка 1" width="200px" height="200px"></div>
+    <?php  }
+?>
 
 
 </div>

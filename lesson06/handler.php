@@ -1,15 +1,6 @@
 <?php
 
 $imgfile = $_FILES['imagefile']['name'];
-echo '<br>';
-echo  $imgfile;
-echo '<br>';
-var_dump(basename($_FILES['imagefile']));
-echo '------------------------------------';
-
-
-
-
 
 //Это хабр помог. Узнаем расширение.
 function letGetExtension($filename)
@@ -33,7 +24,8 @@ function letGetImg($dir)
         if ($folder = opendir($dir)) {
             while (($file = readdir($folder)) !== false) {
                 if (isItImage($file)) {
-                    $images[] = $dir . $file;
+//                    $images[] = $dir . $file;
+
                 }
                 //echo "filename: $file : filetype: " . filetype($dir . $file) . "<br>";
             }
@@ -57,6 +49,7 @@ echo 'RES   ',$res;
 
 if (isItImage($imgfile)) {
     GetImageFromForm('/var/www/html/lesson06/img/', $imgfile);
+    header('Location: index.html');
 } else { echo 'Ne smogla' ; }
 
 //$newName = $uploadDir . basename($_FILES['image']['name']);
@@ -67,6 +60,18 @@ if (isItImage($imgfile)) {
 //);
 //if ($res) {...} else {...}
 //}
+
+
+
+
+$ddir = scandir('img');
+
+foreach($ddir as $picture) {
+    echo '<br>';
+    if (isItImage($picture)) {
+        echo $picture;
+    }
+}
 
 
 
