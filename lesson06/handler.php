@@ -1,8 +1,9 @@
 <?php
-
+session_start();
+$_SESSION['msg'] = 'Галерея ждет новый файл';
 $imgfile = $_FILES['imagefile']['name'];
 
-//Это хабр помог. Узнаем расширение.
+//Узнаем расширение.
 function letGetExtension($filename)
 {
     return end(explode(".", $filename));
@@ -36,50 +37,30 @@ function letGetImg($dir)
 }
 
 
+
 //Прием файла-картинки из формы.
-function GetImageFromForm($uploadDir, $imgfile) {
-        $newName = $uploadDir . basename($_FILES['imagefile']['name']);
-        if (is_uploaded_file($_FILES['imagefile']['tmp_name'])) {
-            $res = move_uploaded_file ($_FILES['imagefile']['tmp_name'], $newName);
-        }
-echo 'RES   ',$res;
+function GetImageFromForm($uploadDir, $imgfile)
+{
+    $newName = $uploadDir . basename($_FILES['imagefile']['name']);
+    if (is_uploaded_file($_FILES['imagefile']['tmp_name'])) {
+        $res = move_uploaded_file($_FILES['imagefile']['tmp_name'], $newName);
+    }
+    return $res;
+//echo 'RES   ',$res;
     //if ($res) {...} else {...}
 }
 
 
 if (isItImage($imgfile)) {
-    GetImageFromForm('/var/www/html/lesson06/img/', $imgfile);
-    header('Location: index.html');
-} else { echo 'Ne smogla' ; }
-
-//$newName = $uploadDir . basename($_FILES['image']['name']);
-//if (is_uploaded_file($_FILES['image'']['tmp_name'])) {
-//    $res = move_uploaded_file(
-//        $_FILES['image']['tmp_name'],
-//$newName
-//);
-//if ($res) {...} else {...}
-//}
-
-
-
-
-$ddir = scandir('img');
-
-foreach($ddir as $picture) {
-    echo '<br>';
-    if (isItImage($picture)) {
-        echo $picture;
+    if (GetImageFromForm('/var/www/html/lesson06/img/', $imgfile)) {
+        header('Location: picture.php');
+    } else {
+        $_SESSION['msg'] = 'Сервер не смог принять файл.';
+        header('Location: index.php');
     }
-}
-
-
-
-echo '<br>';
-var_dump(isItImage($imgfile));
-
-echo '<br>';
-var_dump(letGetImg($_POST['dir']));
-
+} else {
+    $_SESSION['msg'] = 'Галерея не поддерживает этот формат' ;
+    header('Location: index.php');
+};
 
 ?>
