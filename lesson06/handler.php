@@ -36,7 +36,7 @@ if (isItImage($imgfile)) {
         header('Location: index.php');
     }
 } else {
-    $_SESSION['msg'] = 'Галерея не поддерживает этот формат' ;
+    $_SESSION['msg'] = 'Галерея не поддерживает этот формат';
     header('Location: index.php');
 };
 

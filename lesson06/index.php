@@ -36,20 +36,22 @@
         <fieldset>
             <legend>Галерея</legend>
             <table>
-                <tr><td><?php echo $_SESSION['msg'];?></td></tr>
                 <tr>
-                    <td><input type="file" name="imagefile" size="100" </td>
-
+                    <td><?php echo $_SESSION['msg']; ?></td>
                 </tr>
-                <tr><td><input type="submit" value="Выгрузить"></td></tr>
+                <tr>
+                    <td><input type="file" name="imagefile" size="100"</td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Выгрузить"></td>
+                </tr>
+                <tr>
+                    <td><a href="picture.php">Перейти в галерею</a></td>
+                </tr>
             </table>
         </fieldset>
     </form>
 </div>
-
-
-
-
 
 
 </body>

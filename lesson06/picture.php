@@ -46,7 +46,9 @@ function isItImage($anydata)
 <body>
 <h2>Галерея изображений</h2>
 <a href="index.php">Перейти к форме добавления изображений.</a>
-<br><hr><br>
+<br>
+<hr>
+<br>
 
 <div id="main">
     <?php $ddir = scandir('img');
