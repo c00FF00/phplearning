@@ -59,6 +59,5 @@ function isItImage($anydata)
     ?>
 </div>
 
-
 </body>
 </html>
