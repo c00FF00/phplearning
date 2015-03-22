@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php session_start();
+?><!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -8,25 +9,25 @@
             width: 500px;
             height: 200px;
             margin: 0px auto;
+            padding: 20px;
         }
 
         #galery fieldset, legend {
             border: solid 2px brown;
         }
 
-        #galery input[type="text"] {
+        #galery input[type="file"] {
             border: solid 2px #cccccc;
         }
 
-        #galery input[type="text"]:hover {
+        #galery input[type="file"]:hover {
             border: solid 2px blueviolet;
         }
 
-        #galery input[type="text"]:focus {
+        #galery input[type="file"]:focus {
             border: solid 2px blueviolet;
         }
     </style>
-
 </head>
 <body>
 
@@ -35,18 +36,12 @@
         <fieldset>
             <legend>Галерея</legend>
             <table>
+                <tr><td><?php echo $_SESSION['msg'];?></td></tr>
                 <tr>
-                    <td><input type="text" name="dir" size="30" value=""></td>
-                    <td>Введите путь к папке с изображениями</td>
+                    <td><input type="file" name="imagefile" size="100" </td>
+
                 </tr>
-                <tr>
-                    <td><input type="file" name="imagefile" size="30" value=""></td>
-                    <td>Добавить файл</td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="Выгрузить">&nbsp;&nbsp;<input type="reset" value="Сброс"></td>
-                    <td></td>
-                </tr>
+                <tr><td><input type="submit" value="Выгрузить"></td></tr>
             </table>
         </fieldset>
     </form>
