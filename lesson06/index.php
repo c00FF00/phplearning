@@ -1,56 +1,64 @@
 <?php session_start();
+$_SESSION['msg'] = 'Галерея ждет новых изображений.';
 ?><!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>Галерея</title>
     <style>
-        #galery {
-            width: 500px;
-            height: 200px;
+        #main {
             margin: 0px auto;
-            padding: 20px;
         }
 
-        #galery fieldset, legend {
-            border: solid 2px brown;
+        #main div {
+            width: 200px;
+            height: 200px;
+            float: left;
+            border: solid 3px blue;
+            margin: 5px;
         }
 
-        #galery input[type="file"] {
-            border: solid 2px #cccccc;
+        #main div:hover {
+            border: solid 3px red;
         }
 
-        #galery input[type="file"]:hover {
-            border: solid 2px blueviolet;
-        }
-
-        #galery input[type="file"]:focus {
-            border: solid 2px blueviolet;
-        }
     </style>
 </head>
-<body>
 
-<div id="galery">
-    <form action="handler.php" method="post" enctype="multipart/form-data">
-        <fieldset>
-            <legend>Галерея</legend>
-            <table>
-                <tr>
-                    <td><?php echo $_SESSION['msg']; ?></td>
-                </tr>
-                <tr>
-                    <td><input type="file" name="imagefile" size="100"</td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="Выгрузить"></td>
-                </tr>
-                <tr>
-                    <td><a href="picture.php">Перейти в галерею</a></td>
-                </tr>
-            </table>
-        </fieldset>
-    </form>
+<?php
+
+//Это хабр помог. Узнаем расширение.
+function letGetExtension($filename)
+{
+    return end(explode(".", $filename));
+}
+
+//А изображение ли?
+function isItImage($anydata)
+{
+    $itsImage = ['jpg', 'jpeg', 'png', 'gif'];
+    $exten = letGetExtension($anydata);
+    return (in_array($exten, $itsImage));
+}
+
+?>
+
+<body>
+<h2>Галерея изображений</h2>
+<a href="getimage.php">Перейти к форме добавления изображений.</a>
+<br>
+<hr>
+<br>
+
+<div id="main">
+    <?php $ddir = scandir('/img');
+    foreach ($ddir as $picture) { ?>
+        <?php if (isItImage($picture)) { ?>
+            <div><a href= <?php echo 'img/' . $picture; ?>  target="_blank"><img
+                    src=<?php echo 'img/' . $picture; ?> alt="Картинка" width="200px" height="200px"></a>
+            </div><?php } ?>
+    <?php }
+    ?>
 </div>
 
 

@@ -30,14 +30,14 @@ function GetImageFromForm($uploadDir, $imgfile)
 //Попытка размещения картинки в галерее.
 if (isItImage($imgfile)) {
     if (GetImageFromForm('/var/www/html/img/', $imgfile)) {
-        header('Location: picture.php');
+        header('Location: index.php');
     } else {
         $_SESSION['msg'] = 'Сервер не смог принять файл.';
-        header('Location: index.php');
+        header('Location: getimage.php');
     }
 } else {
     $_SESSION['msg'] = 'Галерея не поддерживает этот формат';
-    header('Location: index.php');
+    header('Location: getimage.php');
 };
 
 ?>

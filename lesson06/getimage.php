@@ -46,7 +46,7 @@
                     <td><input type="submit" value="Выгрузить"></td>
                 </tr>
                 <tr>
-                    <td><a href="picture.php">Перейти в галерею</a></td>
+                    <td><a href="index.php">Перейти в галерею</a></td>
                 </tr>
             </table>
         </fieldset>
