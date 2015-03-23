@@ -29,7 +29,7 @@ function GetImageFromForm($uploadDir, $imgfile)
 
 //Попытка размещения картинки в галерее.
 if (isItImage($imgfile)) {
-    if (GetImageFromForm('/var/www/html/lesson06/img/', $imgfile)) {
+    if (GetImageFromForm('/var/www/html/img/', $imgfile)) {
         header('Location: picture.php');
     } else {
         $_SESSION['msg'] = 'Сервер не смог принять файл.';
