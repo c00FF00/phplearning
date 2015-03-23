@@ -31,11 +31,7 @@
 
 function testdigit($anydata)
 {
-    if (preg_match("/^-\d+\.\d+$|^\d+\.\d+$|^-\d+$|^\d+$/", $anydata)) {
-        return true;
-    } else {
-        return false;
-    }
+    return preg_match("/^-\d+\.\d+$|^\d+\.\d+$|^-\d+$|^\d+$/", $anydata); 
 }
 
 function calculator($firstnm, $secondnm, $act)
