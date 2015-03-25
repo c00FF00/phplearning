@@ -53,6 +53,9 @@
                 <?php echo $_SESSION['msg']; ?>
             </div>
             <div>
+                <input type="text" name="pname">
+            </div>
+            <div>
                 <input type="file" name="imagefile">
             </div>
             <div>
