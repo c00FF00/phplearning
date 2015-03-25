@@ -65,5 +65,4 @@ function makeGallery($fullPath, $shortPath, $fileName, $fileSize, $comment)
 mysql_connect('localhost', 'root', '123456');
 mysql_select_db('gallery');
 makeGallery($fullPath, $shortPath, $fileName, $fileSize, $comment);
-
 ?>
