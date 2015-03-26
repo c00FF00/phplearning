@@ -16,18 +16,6 @@
             border: solid 2px brown;
         }
 
-        /*#galery input[type="file"] {*/
-        /*border: solid 2px #cccccc;*/
-        /*}*/
-
-        /*#galery input[type="file"]:hover {*/
-        /*border: solid 2px blueviolet;*/
-        /*}*/
-
-        /*#galery input[type="file"]:focus {*/
-        /*border: solid 2px blueviolet;*/
-        /*}*/
-
         .msg {
             color: darkmagenta;
         }

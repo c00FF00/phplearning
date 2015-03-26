@@ -1,0 +1,23 @@
+#main {
+    width: 400px;
+    height: 206px;
+    float: left;
+    border: solid 3px #cccccc;
+    margin: 5px;
+    padding: 1px;
+}
+
+#main div.picture {
+    float: left;
+    border: solid 3px transparent;
+}
+
+#main div.picture:hover {
+    border-top: solid 3px darkcyan;
+
+}
+
+#main div.subj {
+    font-size: 10pt;
+    padding-left: 30px;
+}
