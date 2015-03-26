@@ -13,6 +13,7 @@ $fullPath = __DIR__ . $shortPath;
 $comment = $_POST['subject'];
 $pname = $_POST['pname'];
 
+var_dump($_FILES);
 
 
 //Узнаем расширение.

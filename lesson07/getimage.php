@@ -3,32 +3,8 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
-    <style>
-        #galery {
-            width: 400px;
-            height: 200px;
-            margin: 0px auto;
-            padding: 20px;
-        }
-
-        #galery fieldset, legend {
-            border: solid 2px brown;
-        }
-
-        .msg {
-            color: darkmagenta;
-        }
-
-        #galery div {
-            margin-top: 10px;
-        }
-
-        p {
-            font-size: 12px;
-            color: darkblue;
-        }
-    </style>
+    <title>Форма ввода</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
 

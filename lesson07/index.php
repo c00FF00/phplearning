@@ -5,33 +5,7 @@ $_SESSION['msg'] = 'Галерея ждет новых изображений.';
 <head lang="en">
     <meta charset="UTF-8">
     <title>Галерея</title>
-    <style>
-        #main {
-            width: 400px;
-            height: 206px;
-            float: left;
-            border: solid 3px #cccccc;
-            margin: 5px;
-            padding: 1px;
-        }
-
-        #main div.picture {
-            float: left;
-            border: solid 3px transparent;
-        }
-
-        #main div.picture:hover {
-            border-top: solid 3px darkcyan;
-
-        }
-
-        #main div.subj {
-            font-size: 10pt;
-            padding-left: 30px;
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -63,7 +37,7 @@ $dir = __DIR__;
             <p><?php echo $row['pname']; ?></p>
             <p><?php echo 'Дата:   ', $row['dateforplace']; ?></p>
             <p><?php echo 'Комментарий:     ', $row['comment']; ?></p>
-            <p><?php echo 'Размер:          ', round($row['size'] / 1048576, 2), ' Mb'; ?></p>
+            <p><?php echo 'Размер Mb:          ', round($row['size'] / 1048576, 2), ' Mb'; ?></p>
             <p><?php echo 'Размер в px: ', $ssize['0'],'x',$ssize['1'] ; ?></p>
         </div>
     </div>
