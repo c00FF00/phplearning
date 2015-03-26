@@ -37,18 +37,15 @@ $dir = __DIR__;
                         height="200px"></a></div>
             <div class="subj">
                 <p><?php echo $row['pname']; ?></p>
-
                 <p><?php echo 'Дата:   ', $row['dateforplace']; ?></p>
-
                 <p><?php echo 'Комментарий:     ', $row['comment']; ?></p>
-
                 <p><?php echo 'Размер Mb:          ', round($row['size'] / 1048576, 2), ' Mb'; ?></p>
-
                 <p><?php echo 'Размер в px: ', $ssize['0'], 'x', $ssize['1']; ?></p>
             </div>
         </div>
-
-    <?php } else { mysql_query($delete . "'" . $row['nameofpicture'] . "'"); }
+    <?php } else {
+        mysql_query($delete . "'" . $row['nameofpicture'] . "'");
+    }
 } ?>
 
 
