@@ -7,68 +7,32 @@ $_SESSION['msg'] = 'Галерея ждет новых изображений.';
     <title>Галерея</title>
     <style>
         #main {
-            margin: 0px auto;
+            width: 400px;
+            height: 206px;
+            float: left;
+            border: solid 3px #cccccc;
+            margin: 5px;
+            padding: 1px;
         }
 
         #main div.picture {
-            width: 200px;
-            height: 300px;
             float: left;
             border: solid 3px transparent;
-            margin: 5px;
-            padding: 3px;
         }
 
         #main div.picture:hover {
             border-top: solid 3px darkcyan;
+
         }
 
         #main div.subj {
-            width: 200px;
-            height: 100px;
             font-size: 10pt;
-
-            padding: 5px;
+            padding-left: 30px;
         }
 
-        p {
-            width: 200px;
-        }
 
     </style>
 </head>
-
-<?php
-
-//Это хабр помог. Узнаем расширение.
-function letGetExtension($filename)
-{
-    return end(explode(".", $filename));
-}
-
-//А изображение ли?
-function isItImage($anydata)
-{
-    $itsImage = ['jpg', 'jpeg', 'png', 'gif'];
-    $exten = letGetExtension($anydata);
-    return (in_array($exten, $itsImage));
-}
-
-function aboutPictureR($file)
-{
-    return file_get_contents($file);
-}
-
-function Comment($file)
-{
-    if ($subj = aboutPictureR($file . '.txt')) {
-        echo $subj;
-    } else {
-        echo 'Без описания';
-    }
-}
-
-?>
 
 <body>
 <h2>Галерея изображений</h2>
@@ -77,18 +41,34 @@ function Comment($file)
 <hr>
 <br>
 
-<div id="main">
-    <?php $ddir = scandir('img');
-    foreach ($ddir as $picture) { ?>
-        <?php if (isItImage($picture)) {
-            echo "\n"; ?>
-            <div class="picture"><a href= <?php echo 'img/' . $picture; ?>  target="_blank"><img
-                    src=<?php echo 'img/' . $picture; ?> alt="Картинка" width="200px" height="200px"></a>
+<?php
 
-            <div id="subj" class="subj"><p><?php Comment('/var/www/html/subj/' . $picture); ?></p></div></div><?php } ?>
-    <?php }
-    ?>
-</div>
+mysql_connect('localhost', 'root', '123456');
+mysql_select_db('gallery');
+
+$query = 'select * from picture';
+$getall = mysql_query($query);
+$dir = __DIR__;
+
+?>
+
+<?php while (false !== ($row = mysql_fetch_array($getall))) {
+    $ssize = getimagesize($dir . $row['pathofimage'] . $row['nameofpicture']);?>
+
+    <div id="main">
+        <div class="picture"><a href= <?php echo $row['pathofimage'] . $row['nameofpicture']; ?>  target="_blank"><img
+                    src=<?php echo $row['pathofimage'] . $row['nameofpicture']; ?> alt="Отсутствует" width="200px"
+                    height="200px"></a></div>
+        <div class="subj">
+            <p><?php echo $row['pname']; ?></p>
+            <p><?php echo 'Дата:   ', $row['dateforplace']; ?></p>
+            <p><?php echo 'Комментарий:     ', $row['comment']; ?></p>
+            <p><?php echo 'Размер Mb:          ', round($row['size'] / 1048576, 2), ' Mb'; ?></p>
+            <p><?php echo 'Размер в px: ', $ssize['0'],'x',$ssize['1'] ; ?></p>
+        </div>
+    </div>
+
+<?php } ?>
 
 
 </body>

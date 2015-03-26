@@ -33,7 +33,7 @@ function isItImage($anydata)
 //Загрузки в MySql
 function pictureToGallerySQL($shortPath, $fileName, $fileSize, $pname, $comment)
 {
-    $insert = "INSERT INTO picture (pathofimage, nameofpicture, size, pname, comment) VALUES ('$shortPath', '$fileName', '$fileSize', '$pname', '$comment')";
+    $insert = "INSERT INTO picture (pathofimage, nameofpicture, size, pname, comment) VALUES ('" . $shortPath . "', '" . $fileName . "', '" . $fileSize . "', '" . $pname . "', '" . $comment . "')";
     $result = mysql_query($insert);
     return $result;
 }
@@ -69,6 +69,7 @@ function makeGallery($fullPath, $shortPath, $fileName, $fileSize, $pname, $comme
     }
 }
 
+//Выгрузка в базу.
 mysql_connect('localhost', 'root', '123456');
 mysql_select_db('gallery');
 makeGallery($fullPath, $shortPath, $fileName, $fileSize, $pname, $comment);

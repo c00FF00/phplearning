@@ -1,7 +1,9 @@
 <?php
 
-echo var_dump($_FILES['imagefile']['size']);
+//echo var_dump($_FILES['imagefile']['size']);
 
+
+echo var_dump(getimagesize('Ibanez_Infinity_by_Jaco_Kok.jpg'));
 
 
 //mysql_connect('10.0.3.120', 'djon', '123456');
