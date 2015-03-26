@@ -5,7 +5,7 @@ $_SESSION['msg'] = 'Галерея ждет новых изображений.';
 <head lang="en">
     <meta charset="UTF-8">
     <title>Галерея</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
 <body>

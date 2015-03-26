@@ -4,7 +4,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Форма ввода</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 <body>
 
