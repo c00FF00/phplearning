@@ -5,7 +5,7 @@ $_SESSION['msg'] = 'Галерея ждет новых изображений.';
 <head lang="en">
     <meta charset="UTF-8">
     <title>Галерея</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
 </head>
 
 <body>
@@ -27,22 +27,28 @@ $dir = __DIR__;
 ?>
 
 <?php while (false !== ($row = mysql_fetch_array($getall))) {
-    $ssize = getimagesize($dir . $row['pathofimage'] . $row['nameofpicture']);?>
+    $ssize = getimagesize($dir . $row['pathofimage'] . $row['nameofpicture']);
+    if ($ssize) { ?>
+        <div id="main">
+            <div class="picture"><a
+                    href= <?php echo $row['pathofimage'] . $row['nameofpicture']; ?>  target="_blank"><img
+                        src=<?php echo $row['pathofimage'] . $row['nameofpicture']; ?> alt="Отсутствует" width="200px"
+                        height="200px"></a></div>
+            <div class="subj">
+                <p><?php echo $row['pname']; ?></p>
 
-    <div id="main">
-        <div class="picture"><a href= <?php echo $row['pathofimage'] . $row['nameofpicture']; ?>  target="_blank"><img
-                    src=<?php echo $row['pathofimage'] . $row['nameofpicture']; ?> alt="Отсутствует" width="200px"
-                    height="200px"></a></div>
-        <div class="subj">
-            <p><?php echo $row['pname']; ?></p>
-            <p><?php echo 'Дата:   ', $row['dateforplace']; ?></p>
-            <p><?php echo 'Комментарий:     ', $row['comment']; ?></p>
-            <p><?php echo 'Размер Mb:          ', round($row['size'] / 1048576, 2), ' Mb'; ?></p>
-            <p><?php echo 'Размер в px: ', $ssize['0'],'x',$ssize['1'] ; ?></p>
+                <p><?php echo 'Дата:   ', $row['dateforplace']; ?></p>
+
+                <p><?php echo 'Комментарий:     ', $row['comment']; ?></p>
+
+                <p><?php echo 'Размер Mb:          ', round($row['size'] / 1048576, 2), ' Mb'; ?></p>
+
+                <p><?php echo 'Размер в px: ', $ssize['0'], 'x', $ssize['1']; ?></p>
+            </div>
         </div>
-    </div>
 
-<?php } ?>
+    <?php }
+} ?>
 
 
 </body>
