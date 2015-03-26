@@ -21,6 +21,7 @@ mysql_connect('localhost', 'root', '123456');
 mysql_select_db('gallery');
 
 $query = 'select * from picture';
+$delete = "DELETE FROM picture WHERE  nameofpicture  = ";
 $getall = mysql_query($query);
 $dir = __DIR__;
 
@@ -47,7 +48,7 @@ $dir = __DIR__;
             </div>
         </div>
 
-    <?php }
+    <?php } else { mysql_query($delete . "'" . $row['nameofpicture'] . "'"); }
 } ?>
 
 
