@@ -7,9 +7,6 @@ function isItImage($fileName) {
 }
 
 
-var_dump($mime);
-
-var_dump(isItImage('img/Mono_Lake_by_Angela_Henderson.jpg'));
 
 
 ?>
