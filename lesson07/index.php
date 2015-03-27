@@ -24,8 +24,12 @@ $query = 'select * from picture';
 $delete = "DELETE FROM picture WHERE  nameofpicture  = ";
 $getall = mysql_query($query);
 $dir = __DIR__;
+$imagedir = '/img/';
 
 include $dir . '/lib.php';
+
+//Просканируем директорию с изображениями и удалим не изображения
+testImageFromDir($imagedir);
 
 ?>
 
@@ -46,6 +50,7 @@ include $dir . '/lib.php';
             </div>
         </div>
     <?php } else {
+        //Удалим запись в базе, если файла изображения нет в директории
         mysql_query($delete . "'" . $row['nameofpicture'] . "'");
     }
 } ?>

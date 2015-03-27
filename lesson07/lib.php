@@ -5,21 +5,31 @@ function letGetExtension($fileName)
     return end(explode(".", $fileName));
 }
 
-//Проверим mime
+//Проверим файл по mime
 function isItImageMime($fileName) {
     $itsImage = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'];
     $mime = getimagesize($fileName)['mime'];
     return (in_array($mime, $itsImage));
 }
 
-//Проверим extension
+//Удаляет файлы, которые не являются изображениями из директории
+function testImageFromDir($imgdir)
+{
+    $ddir = scandir(__DIR__ . $imgdir);
+    foreach ($ddir as $picture) {
+        if (!isItImageMime(__DIR__ . $imgdir . $picture)) {
+            unlink(__DIR__ . $imgdir . $picture);
+        }
+    }
+}
+
+//Проверим файл изображения по расширению
 function isItImage($anydata)
 {
     $itsImage = ['jpg', 'jpeg', 'png', 'gif'];
     $exten = letGetExtension($anydata);
     return (in_array($exten, $itsImage));
 }
-
 
 //Загрузки в MySql
 function pictureToGallerySQL($shortPath, $fileName, $fileSize, $pname, $comment)
@@ -59,6 +69,5 @@ function makeGallery($fullPath, $shortPath, $fileName, $fileSize, $pname, $comme
         header('Location: getimage.php');
     }
 }
-
 
 ?>
