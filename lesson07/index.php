@@ -25,6 +25,8 @@ $delete = "DELETE FROM picture WHERE  nameofpicture  = ";
 $getall = mysql_query($query);
 $dir = __DIR__;
 
+include $dir . '/lib.php';
+
 ?>
 
 <?php while (false !== ($row = mysql_fetch_array($getall))) {
