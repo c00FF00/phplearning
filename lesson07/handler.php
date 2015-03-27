@@ -15,7 +15,6 @@ $pname = $_POST['pname'];
 
 include __DIR__ . '/lib.php';
 
-
 //Выгрузка в базу.
 mysql_connect('localhost', 'root', '123456');
 mysql_select_db('gallery');
